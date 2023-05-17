@@ -13,7 +13,7 @@
 // Put your function here!
 // fn calculate_price_of_apples {
 fn calculate_price_of_apples(n:u32) -> u32{
-    if n >= 40 {n<<1} else {n}
+    if n <= 40 {n*2} else {n}
 }
 // Don't modify this function!
 #[test]
