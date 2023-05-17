@@ -11,8 +11,6 @@
 //
 // Execute `rustlings hint hashmaps2` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
 use std::collections::HashMap;
 
 #[derive(Hash, PartialEq, Eq)]
@@ -32,9 +30,9 @@ fn fruit_basket(basket: &mut HashMap<Fruit, u32>) {
         Fruit::Lychee,
         Fruit::Pineapple,
     ];
-
     for fruit in fruit_kinds {
-        // TODO: Put new fruits if not already present. Note that you
+        // https://doc.rust-lang.org/book/ch08-03-hash-maps.html#adding-a-key-and-value-only-if-a-key-isnt-present
+        basket.entry(fruit).or_insert(1);
         // are not allowed to put any type of fruit that's already
         // present!
     }
