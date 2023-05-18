@@ -4,11 +4,11 @@
 // Why not? What should we do to fix it?
 // Execute `rustlings hint errors3` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
 use std::num::ParseIntError;
 
-fn main() {
+// https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html#where-the--operator-can-be-used
+// “?”执行失败会提前返回错误，main无法接受，需要指定main的返回值
+fn main() -> Result<(), ParseIntError>{
     let mut tokens = 100;
     let pretend_user_input = "8";
 
@@ -20,6 +20,7 @@ fn main() {
         tokens -= cost;
         println!("You now have {} tokens.", tokens);
     }
+    Ok(())
 }
 
 pub fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
