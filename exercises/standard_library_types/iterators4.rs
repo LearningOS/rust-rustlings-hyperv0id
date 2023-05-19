@@ -1,10 +1,11 @@
 // iterators4.rs
 // Execute `rustlings hint iterators4` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
 pub fn factorial(num: u64) -> u64 {
     // Complete this function to return the factorial of num
+    // 直接fold就行，不需要转成vector
+    // (1..=num).rfold(1, |fac, n| {fac * n})
+    (1..=num).fold(1, |fac, n| {fac * n})
     // Do not use:
     // - return
     // Try not to use:
